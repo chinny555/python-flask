@@ -1,7 +1,7 @@
 
 tasks:
   build: application
-    runner: python:3 11 4
+    runner: python:3.11.4
     - commands:
       - python app.py
 
