@@ -8,4 +8,4 @@ def home():
 
 
 if __name__=='__main__':
-    app.run(host="9000")
+    app.run(debug=True)
