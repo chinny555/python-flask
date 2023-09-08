@@ -1,14 +1,22 @@
 
 tasks:
-  build: application
-    runner: python:3.11.4
+  build:
+    runner: razorci/python:3.11.4
+    steps:
+    - checkout
+    - cache/pull: pip-deps-{{ checksum "requirements.txt" }}
+    - commands: 
+      - python -c 'import site; print(C:\Users\gowth\env())'
+      - pip install -r requirements.txt
     - commands:
       - python app.py
 
-      - export PATH="$(python3 -m C:\Users\gowth\env\Lib\site-packages\flask"
+      - export PATH="$(C:\Users\gowth\env\Lib\site-packages\flask"
       # generate coverage reports
       - coverage run app.py
       - coverage report && coverage html
+    - cache/push:
+        key: pip-deps-{{ checksum "requirements.txt" }}
         paths:
         - /C:\Users\gowth\env
     - reports/junit: test-reports/*.xml
