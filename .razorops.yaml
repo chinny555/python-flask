@@ -1,7 +1,7 @@
 
 tasks:
   build: application
-    runner: razorci/python:3.11
+    runner: razorci/python
     - commands:
       - python app.py
 
