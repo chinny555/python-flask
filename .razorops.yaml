@@ -6,19 +6,16 @@ tasks:
     - checkout
     - cache/pull: pip-deps-{{ checksum "requirements.txt" }}
     - commands: 
-      - python -c 'import site; print(C:\Users\gowth\env())'
+      - python -c 'import site; print(site.getsitepackages())'
       - pip install -r requirements.txt
     - commands:
       - python app.py
 
-      - export PATH="$(C:\Users\gowth\env\Lib\site-packages\flask"
-      # generate coverage reports
-      - coverage run app.py
-      - coverage report && coverage html
+      - export PATH="$(python3 -m site --user-base)/bin:$PATH"
     - cache/push:
         key: pip-deps-{{ checksum "requirements.txt" }}
         paths:
-        - /C:\Users\gowth\env
+        - /C:\Users\gowth\env\Lib\site-packages\flask
     - reports/junit: test-reports/*.xml
     - reports/html: 
         dir: htmlcov
