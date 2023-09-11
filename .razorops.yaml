@@ -8,8 +8,6 @@ tasks:
     - commands: 
       - python -c 'import site; print(site.getsitepackages())'
       - pip install -r requirements.txt
-
-      - export PATH="$(python3 -m site --user-base)/bin:$PATH"
     - cache/push:
         key: pip-deps-{{ checksum "requirements.txt" }}
         paths:
