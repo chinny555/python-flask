@@ -10,11 +10,11 @@ tasks:
       - pip install -r requirements.txt
     - commands:
       - python test.py
+       - export PATH="$(python3 -m site --user-base)/bin:$PATH"
           - cache/push:
         key: pip-deps-{{ checksum "requirements.txt" }}
         paths:
         - /"C:\Users\gowth\env\Lib\site-packages
     - reports/junit: test-reports/*.xml
-    - reports/html: 
-        dir: htmlcov
+   
        
