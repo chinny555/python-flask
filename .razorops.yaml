@@ -12,8 +12,4 @@ tasks:
       - python test.py
     - cache/push:
         key: pip-deps-{{ checksum "requirements.txt" }}
-        paths:
-        - /C:\Users\gowth\env
-    - reports/junit: test-reports/*.xml
-    - reports/html: 
-        dir: htmlcov
+       
