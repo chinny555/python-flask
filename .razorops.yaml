@@ -1,7 +1,7 @@
 
 global:
   runner:
-    os_image: ubuntu
+    os_image: windows
 
 tasks:
   unit-tests:
