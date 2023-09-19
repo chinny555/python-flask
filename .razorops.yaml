@@ -17,5 +17,4 @@ tasks:
         paths:
         - /C:\Users\gowth\env\Lib\site-packages\flask
     - reports/junit:
-    - reports/html:
-       dir: testing
+  
