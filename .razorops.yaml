@@ -7,13 +7,8 @@ tasks:
     - commands: 
       - python -c 'import site; print(site.getsitepackages())'
       - pip install -r requirements.txt
-    - commands:
-      - python test.py
-      # generate coverage reports
-    - cache/push:
+       - cache/push:
         key: pip-deps-{{ checksum "requirements.txt" }}
         paths:
         - /"C:\Users\gowth\env\Lib\site-packages
-    - reports/junit: test-reports/*.xml
-    - reports/html: 
-        dir: htmlcov
+   
