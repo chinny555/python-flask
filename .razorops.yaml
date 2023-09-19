@@ -16,6 +16,7 @@ tasks:
         key: pip-deps-{{ checksum "requirements.txt" }}
         paths:
         - /C:\Users\gowth\env\Lib\site-packages\flask
-    - reports/junit: test-reports/*.xml
+    - reports/junit:
+      - spec/*.xml
     - reports/html: 
         dir: htmlcov
