@@ -10,8 +10,6 @@ tasks:
     - commands:
       - python test.py
       # generate coverage reports
-      - coverage run test.py
-      - coverage report && coverage html
     - cache/push:
         key: pip-deps-{{ checksum "requirements.txt" }}
         paths:
