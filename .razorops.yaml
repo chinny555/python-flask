@@ -17,6 +17,5 @@ tasks:
         paths:
         - /C:\Users\gowth\env\Lib\site-packages\flask
     - reports/junit:
-      - spec/*.xml
     - reports/html: 
         dir: htmlcov
