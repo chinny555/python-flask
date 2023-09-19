@@ -18,4 +18,4 @@ tasks:
         - /C:\Users\gowth\env\Lib\site-packages\flask
     - reports/junit:
     - reports/html:
-       dir:htmlcov
+       dir: htmlcov
